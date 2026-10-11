@@ -56,4 +56,4 @@ PN Fitness is a responsive fitness tracking dashboard built with React. It provi
 ### 1. Clone the repository
 
 ```bash
-git clone YOUR_GITHUB_REPOSITORY_URL
+git clone https://github.com/Nikhil18010/PN-fitness.git
