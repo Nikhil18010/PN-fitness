@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import './styles/Header.css';
-import profilePic from './Assets/minnu.JPG';
 import { FaSearch } from 'react-icons/fa';
 
 const Header = ({ onSearch }) => {
@@ -28,9 +27,9 @@ const Header = ({ onSearch }) => {
                         <FaSearch className="search-icon" />
                     </div>
 
-                    <div className="profile-pic">
-                        <img src={profilePic} alt="Profile" />
-                    </div>
+                   <div className="profile-pic">
+    <span>👤</span>
+</div>
                 </div>
             </div>
         </header>
