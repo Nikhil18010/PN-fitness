@@ -7,36 +7,55 @@
     font-family: 'Poppins', sans-serif;
 }
 
-body {
+html,
+body,
+#root {
+    width: 100%;
+    min-width: 0;
     margin: 0;
+    padding: 0;
+}
+
+body {
     font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
 }
 
 .app {
+    width: calc(100% - 30px);
     margin: 15px;
     padding: 10px;
     background-color: #ffffff;
     box-shadow: 0 2px 12px rgba(35, 0, 60, 0.511);
     border-radius: 30px;
     display: flex;
-    height: 95vh;
+    height: auto;
+    min-width: 0;
+    overflow: visible;
 }
 
 .main-content {
-    flex: 1;
+    flex: 1 1 auto;
+    min-width: 0;
+    width: 100%;
     padding: 10px;
     padding-top: 5px !important;
 }
 
-.sidebar, .friends-list, .live-map {
-    padding: 100px;
+.sidebar,
+.friends-list,
+.live-map {
+    padding: 0;
 }
 
-.header, .overview, .activity-cards {
+.header,
+.overview,
+.activity-cards {
     margin-bottom: 10px;
 }
 
-.friends-list, .live-map {
+.friends-list,
+.live-map {
     width: 300px;
     flex-shrink: 0;
 }
@@ -53,4 +72,69 @@ body {
     height: 100%;
     background-color: #6a4c93;
     border-radius: 5px;
+}
+
+
+/* =========================
+   MOBILE
+   ========================= */
+
+@media screen and (max-width: 768px) {
+
+    html,
+    body,
+    #root {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+        overflow-x: hidden !important;
+    }
+
+    .app {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+        margin: 0 !important;
+        padding: 8px !important;
+        border-radius: 0 !important;
+        height: auto !important;
+        min-height: 100vh;
+        display: flex !important;
+        flex-direction: column !important;
+        overflow-x: hidden !important;
+        overflow-y: visible !important;
+    }
+
+    .main-content {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+        flex: none !important;
+        padding: 8px !important;
+    }
+
+    .header,
+    .overview,
+    .activity-cards,
+    .workout-categories {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+    }
+
+    .friends-list {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+        flex-shrink: 1 !important;
+        margin-top: 10px;
+    }
+
+    .activity-cards {
+        grid-template-columns: 1fr !important;
+    }
+
+    .categories-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    }
 }

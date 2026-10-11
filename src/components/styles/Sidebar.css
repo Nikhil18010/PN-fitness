@@ -1,57 +1,126 @@
 .sidebar {
-  width: 80px;
-  background-color: #6a4c93 !important;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 20px 0;
-  border-radius: 30px;
-  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    width: 80px;
+    background-color: #6a4c93 !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+    border-radius: 30px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    flex-shrink: 0;
 }
 
 .logo {
-  font-size: 24px;
-  color: #fff;
-  margin-bottom: 20px;
-  padding-bottom: 10px; 
-  border-bottom: 5px solid #825acb; 
-  width: 100%;
-  text-align: center;
+    font-size: 22px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 3px solid #825acb;
+    width: 100%;
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+nav {
+    width: 100%;
 }
 
 nav ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  width: 100%;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
 }
 
 nav ul li {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  margin-bottom: 20px;
-  color: #fff;
-  cursor: pointer;
-  padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 12px;
+    color: #fff;
+    cursor: pointer;
+    padding: 10px 5px;
+    gap: 5px;
 }
 
 nav ul li span {
-  margin-top: 5px;
-  font-size: 12px;
-  text-align: center;
+    font-size: 10px;
+    text-align: center;
 }
 
 nav ul li:hover {
-  background-color: #825acb;
-  border-radius: 12px;
-}
-
-nav ul li:hover span {
-  display: block;
+    background-color: #825acb;
+    border-radius: 12px;
 }
 
 .fa-icon {
-  font-size: 24px;
+    font-size: 24px;
+}
+
+
+/* =========================
+   MOBILE
+   ========================= */
+
+@media screen and (max-width: 768px) {
+
+    .sidebar {
+        width: 100% !important;
+        max-width: 100% !important;
+        height: 65px !important;
+        padding: 5px 6px !important;
+        border-radius: 15px !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        overflow: hidden !important;
+    }
+
+    .logo {
+        width: 35px !important;
+        min-width: 35px !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        border: none !important;
+        font-size: 15px !important;
+        letter-spacing: 0 !important;
+    }
+
+    nav {
+        flex: 1 !important;
+        width: auto !important;
+        min-width: 0 !important;
+        overflow: hidden !important;
+    }
+
+    nav ul {
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        width: 100% !important;
+        min-width: 0 !important;
+    }
+
+    nav ul li {
+        flex: 1 1 0 !important;
+        min-width: 0 !important;
+        width: auto !important;
+        margin: 0 !important;
+        padding: 3px 1px !important;
+        gap: 1px !important;
+        overflow: hidden !important;
+    }
+
+    nav ul li span {
+        display: block !important;
+        font-size: 7px !important;
+        white-space: nowrap !important;
+    }
+
+    .fa-icon {
+        font-size: 16px !important;
+    }
 }

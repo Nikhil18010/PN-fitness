@@ -13,7 +13,16 @@ import {
 } from 'chart.js';
 import './styles/Overview.css';
 
-ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend, Filler);
+ChartJS.register(
+    CategoryScale,
+    LinearScale,
+    PointElement,
+    LineElement,
+    Title,
+    Tooltip,
+    Legend,
+    Filler
+);
 
 const Overview = () => {
     const [data, setData] = useState({
@@ -35,55 +44,27 @@ const Overview = () => {
     });
 
     useEffect(() => {
-        fetch('https://mockapi.io/endpoint')
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Network response was not ok');
-                }
-                return response.json();
-            })
-            .then(apiData => {
-                setData({
-                    labels: apiData.months,
-                    datasets: [
-                        {
-                            label: 'Steps',
-                            data: apiData.steps,
-                            backgroundColor: 'rgba(106, 76, 147, 0.2)',
-                            borderColor: '#6a4c93',
-                            borderWidth: 2,
-                            pointBackgroundColor: '#ff6f61',
-                            pointBorderColor: '#fff',
-                            pointHoverBackgroundColor: '#ff6f61',
-                            pointHoverBorderColor: '#fff',
-                            fill: true,
-                        },
-                    ],
-                });
-            })
-            .catch(error => {
-                console.error('Fetch error:', error);
-                setData({
-                    labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
-                    datasets: [
-                        {
-                            label: 'Steps',
-                            data: [3000, 5000, 7000, 9000, 8000, 10000, 12000, 14000, 13000, 15000, 16000, 17000],
-                            backgroundColor: 'rgba(106, 76, 147, 0.2)',
-                            borderColor: '#6a4c93',
-                            borderWidth: 2,
-                            pointBackgroundColor: '#ff6f61',
-                            pointBorderColor: '#fff',
-                            pointHoverBackgroundColor: '#ff6f61',
-                            pointHoverBorderColor: '#fff',
-                            fill: true,
-                        },
-                    ],
-                });
-            });
+        setData({
+            labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+            datasets: [
+                {
+                    label: 'Steps',
+                    data: [6200, 7800, 5400, 9200, 7240, 8600, 10000],
+                    backgroundColor: 'rgba(106, 76, 147, 0.2)',
+                    borderColor: '#6a4c93',
+                    borderWidth: 2,
+                    pointBackgroundColor: '#ff6f61',
+                    pointBorderColor: '#fff',
+                    pointHoverBackgroundColor: '#ff6f61',
+                    pointHoverBorderColor: '#fff',
+                    fill: true,
+                },
+            ],
+        });
     }, []);
 
     const options = {
+         responsive: true,
         maintainAspectRatio: false,
         scales: {
             y: {
@@ -118,43 +99,71 @@ const Overview = () => {
 
     return (
         <div className="overview">
-            <h2>Overview</h2>
+            <h2>Today's Activity</h2>
+
             <div className="overview-content">
+
                 <div className="stats">
+
                     <div className="stat">
-                        <h3>Total Time</h3>
+                        <h3>Steps</h3>
+
                         <div className="progress-bar">
-                            <div className="progress" style={{ width: '75%' }}></div>
+                            <div
+                                className="progress"
+                                style={{ width: '72%' }}
+                            ></div>
                         </div>
+
                         <div className="details">
-                            <span>748 Hr</span>
-                            <span>May</span>
+                            <span>7,240 / 10,000</span>
+                            <span>72%</span>
                         </div>
                     </div>
+
                     <div className="stat">
-                        <h3>Total Steps</h3>
+                        <h3>Calories</h3>
+
                         <div className="progress-bar">
-                            <div className="progress" style={{ width: '90%' }}></div>
+                            <div
+                                className="progress"
+                                style={{ width: '70%' }}
+                            ></div>
                         </div>
+
                         <div className="details">
-                            <span>9,178 St</span>
-                            <span>May</span>
+                            <span>420 / 600 kcal</span>
+                            <span>70%</span>
                         </div>
                     </div>
+
                     <div className="stat">
-                        <h3>Target</h3>
+                        <h3>Workout</h3>
+
                         <div className="progress-bar">
-                            <div className="progress" style={{ width: '95%' }}></div>
+                            <div
+                                className="progress"
+                                style={{ width: '70%' }}
+                            ></div>
                         </div>
+
                         <div className="details">
-                            <span>9,200 St</span>
-                            <span>May</span>
+                            <span>42 / 60 min</span>
+                            <span>70%</span>
                         </div>
                     </div>
+
                 </div>
+
                 <div className="chart">
-                    <Line data={data} options={options} />
+                    <h3>Weekly Activity</h3>
+
+                    <Line
+                        data={data}
+                        options={options}
+                    />
                 </div>
+
             </div>
         </div>
     );

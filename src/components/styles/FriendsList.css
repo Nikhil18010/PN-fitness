@@ -1,186 +1,347 @@
 .friends-list {
-  padding: 15px;
-  background-color: #ffffff;
-  border-radius: 30px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.322);
-  display: flex;
-  flex-direction: column; 
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    color: #333;
+    height: fit-content;
 }
 
 .header-section {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
 }
 
-.friends-list h2 {
-  font-size: 1.5rem;
-  font-weight: 900;
-  margin-bottom: 10px;
-  margin-left: 5px;
-  color: #333333;
-  display: flex;
-  align-items: center;
+.header-section h2 {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 0;
+    font-size: 20px;
+    font-weight: 600;
 }
 
-.view-all-button {
-  background: none;
-  border: none;
-  color: #6a4c93;
-  font-size: 1rem;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
+/* Goals */
+
+.goals-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
 }
 
-.view-all-button svg {
-  margin-left: 5px;
+.goal-item {
+    padding-bottom: 9px;
+    margin-bottom: 8px;
+    border-bottom: 1px solid #eeeeee;
 }
 
-.activity-tabs {
-  padding: 5px;
-  display: flex;
-  justify-content: center;
-  margin-bottom: 5px;
-  background-color: #dfdfdfb4;
-  border-radius: 30px;
+.goal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 8px;
 }
 
-.activity-tabs button {
-  padding: 10px 20px;
-  border: none;
-  border-radius: 20px;
-  background-color: #ffffff;
-  cursor: pointer;
-  color: #777777;
-  margin-right: 10px;
-  transition: background-color 0.3s ease;
+.goal-name {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    font-weight: 600;
 }
 
-.activity-tabs button.active {
-  background-color: #6a4c93;
-  color: #ffffff;
+.goal-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    border-radius: 8px;
+    background: #f0ebf7;
+    color: #6a4c93;
 }
 
-.activity-tabs button:hover {
-  box-shadow: 0 0 3px #000;
+.goal-percent {
+    font-size: 13px;
+    font-weight: 600;
+    color: #6a4c93;
 }
 
-ul {
-  list-style: none;
-  padding: 0;
+.goal-progress-bar {
+    width: 100%;
+    height: 7px;
+    background: #eeeeee;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 7px;
 }
 
-li {
-  display: flex;
-  align-items: center;
-  padding: 5px 0;
-  border-bottom: 1px solid #eeeeee;
+.goal-progress {
+    height: 100%;
+    background: linear-gradient(90deg, #6a4c93, #ff6f61);
+    border-radius: 10px;
 }
 
-.friend-info {
-  display: flex;
-  flex-direction: column;
-  margin-left: 10px;
+.goal-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+    color: #777;
 }
 
-.friend-name {
-  font-weight: bold;
-  color: #333333;
+/* Workout Summary */
+
+.workout-summary {
+    margin-top: 10px;
+    padding-bottom: 8px;
 }
 
-.friend-activity {
-  font-size: 14px;
-  color: #777777;
+.workout-summary h2 {
+    margin: 0 0 9px 0;
+    font-size: 16px;
+    font-weight: 600;
 }
 
-.friend-time {
-  font-size: 12px;
-  color: #999999;
+.summary-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6px 0;
+    border-bottom: 1px solid #eeeeee;
+    font-size: 12px;
+    color: #555;
 }
 
-.friend-image {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
+.summary-item strong {
+    color: #6a4c93;
+    font-size: 13px;
 }
 
-.fitness-progress {
-  margin: none;
+.bmi-summary {
+    margin-top: 22px;
+    padding-top: 18px;
+    border-top: 1px solid #eeeeee;
 }
 
-.fitness-progress h2 {
-  font-size: 25px;
-  margin-bottom: 10px;
-  font-weight: 800;
-  color: #333333;
+.bmi-summary h2 {
+    margin: 0 0 14px 0;
+    font-size: 18px;
+    font-weight: 600;
 }
 
-.progress-chart {
-  display: flex;
-  align-items: center;
+.bmi-details {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
 }
 
-.chart-circle {
-  position: relative;
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  background: conic-gradient(
-    #fdcb6e 0% 40%,
-    #00b894 40% 70%,
-    #e17055 70% 90%,
-    #6c5ce7 90% 100%
-  );
+.bmi-item {
+    background: #f7f5fa;
+    padding: 10px 6px;
+    border-radius: 8px;
+    text-align: center;
 }
 
-.chart-center {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
+.bmi-item span {
+    display: block;
+    font-size: 11px;
+    color: #777;
+    margin-bottom: 4px;
 }
 
-.chart-center span {
-  display: block;
-  font-size: 1rem;
-  color: #333333;
+.bmi-item strong {
+    font-size: 13px;
+    color: #6a4c93;
 }
 
-.progress-details {
-  list-style: none;
-  padding: 0;
-  margin-left: 10px;
+.fitness-status {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 12px;
+    padding: 10px;
+    background: #f7f5fa;
+    border-radius: 8px;
+    font-size: 12px;
 }
 
-.progress-details li {
-  font-size: 10px;
-  display: flex;
-  font-weight: 600;
-  align-items: center;
-  margin-bottom: 10px;
+.fitness-status span {
+    color: #777;
 }
 
-.dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  margin-right: 5px;
+.fitness-status strong {
+    color: #6a4c93;
+}
+.bmi-inputs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 14px;
 }
 
-.cardio-dot {
-  background-color: #00b894;
+.bmi-input {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
 }
 
-.stretching-dot {
-  background-color: #fdcb6e;
+.bmi-input label {
+    font-size: 11px;
+    color: #777;
 }
 
-.treadmill-dot {
-  background-color: #e17055;
+.bmi-input input {
+    width: 100%;
+    padding: 8px 10px;
+    border: 1px solid #e1ddea;
+    border-radius: 8px;
+    outline: none;
+    font-size: 13px;
+    color: #333;
+    background: #faf9fc;
 }
 
-.strength-dot {
-  background-color: #6c5ce7;
+.bmi-input input:focus {
+    border-color: #6a4c93;
+    box-shadow: 0 0 0 2px rgba(106, 76, 147, 0.1);
+}
+
+.fitness-status.healthy-range strong {
+    color: #2e8b57;
+}
+
+.fitness-status.underweight strong {
+    color: #3b82f6;
+}
+
+.fitness-status.overweight strong {
+    color: #f59e0b;
+}
+
+.fitness-status.obesity-range strong {
+    color: #ef4444;
+}
+
+.fitness-status.enter-valid-values strong {
+    color: #777;
+}
+
+
+.goal-target-control {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    color: #777;
+}
+
+.goal-target-control input {
+    width: 75px;
+    padding: 4px 6px;
+    border: 1px solid #e1ddea;
+    border-radius: 6px;
+    background: #faf9fc;
+    color: #333;
+    font-size: 12px;
+    outline: none;
+}
+
+.goal-target-control input:focus {
+    border-color: #6a4c93;
+    box-shadow: 0 0 0 2px rgba(106, 76, 147, 0.1);
+}
+
+/* Workout Entry Form */
+.workout-entry {
+    margin: 16px 0;
+    padding: 12px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.55);
+}
+
+.workout-entry h2,
+.workout-history h2 {
+    font-size: 18px;
+    margin-bottom: 12px;
+}
+
+.workout-entry input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 9px 10px;
+    margin-bottom: 8px;
+    border: 1px solid #d8d8e8;
+    border-radius: 7px;
+    outline: none;
+    font-size: 13px;
+}
+
+.workout-entry input:focus {
+    border-color: #5145a8;
+}
+
+.workout-entry button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 7px;
+    background: #5145a8;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.workout-entry button:hover {
+    background: #40358d;
+}
+
+/* Workout History */
+.workout-history {
+    margin: 12px 0 18px;
+    padding: 12px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.55);
+}
+
+.workout-history-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+    padding: 9px 0;
+    border-bottom: 1px solid #e5e5ef;
+    font-size: 13px;
+}
+
+.workout-history-item:last-child {
+    border-bottom: none;
+}
+
+.workout-history-item strong {
+    color: #5145a8;
+    white-space: nowrap;
+}
+
+.workout-history-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.workout-history-actions button {
+    padding: 5px 9px;
+    border: none;
+    border-radius: 6px;
+    background: #ffe3e6;
+    color: #c62840;
+    font-size: 11px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.workout-history-actions button:hover {
+    background: #ffcbd2;
 }
