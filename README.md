@@ -1,6 +1,9 @@
 # PN Fitness
 
 PN Fitness is a responsive fitness tracking dashboard built with React. It provides users with a simple interface to monitor daily activity, fitness goals, workout categories, and basic fitness statistics.
+## Dashboard Preview
+
+![PN Fitness Dashboard](Screenshots/pn-fitness-dashboard.png)
 
 ## Features
 
