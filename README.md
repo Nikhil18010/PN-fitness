@@ -56,7 +56,34 @@ PN Fitness is a responsive fitness tracking dashboard built with React. It provi
 
 ## Getting Started
 
-### 1. Clone the repository
+### Prerequisites
+- Node.js and npm installed on your system.
+- Git installed on your system.
 
-```bash
-git clone https://github.com/Nikhil18010/PN-fitness.git
+### Installation
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/Nikhil18010/PN-fitness.git
+   ```
+
+2. Navigate to the project folder:
+
+   ```bash
+   cd PN-fitness
+   ```
+
+3. Install dependencies:
+
+   ```bash
+   npm install
+   ```
+
+4. Start the development server:
+
+   ```bash
+   npm start
+   ```
+
+5. Open http://localhost:3000 in your browser.
