@@ -1,4 +1,7 @@
 # PN Fitness
+## 🚀 Live Demo
+[Visit PN Fitness](https://pn-fitness-pi.vercel.app)
+
 
 PN Fitness is a responsive fitness tracking dashboard built with React. It provides users with a simple interface to monitor daily activity, fitness goals, workout categories, and basic fitness statistics.
 ## Dashboard Preview
